@@ -1,0 +1,238 @@
+<div class="card shadow-sm border-0 h-100">
+
+    <!-- =============================================== -->
+    <!-- Card Header -->
+    <!-- =============================================== -->
+
+    <div class="card-header bg-white">
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+
+                <h5 class="fw-bold mb-1">
+
+                    <i class="bi bi-diagram-3-fill text-primary"></i>
+
+                    Bilimlar grafigini vizuallashtirish
+
+                </h5>
+
+                <small class="text-muted">
+
+                    KD-HDIE freymvorki tomonidan shakllantirilgan semantik munosabatlar
+
+                </small>
+
+            </div>
+
+            <div>
+
+                <button
+                    class="btn btn-outline-primary btn-sm"
+                    id="refresh-graph">
+
+                    <i class="bi bi-arrow-clockwise"></i>
+
+                    Yangilash
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =============================================== -->
+    <!-- Toolbar -->
+    <!-- =============================================== -->
+
+    <div class="card-body border-bottom bg-light">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <select
+                    id="graph-layout"
+                    class="form-select form-select-sm">
+
+                    <option value="hierarchical">
+
+                        Ierarxik
+
+                    </option>
+
+                    <option value="force">
+
+                        Kuch yo‘naltirilgan
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <select
+                    id="graph-domain"
+                    class="form-select form-select-sm">
+
+                    <option value="all">
+
+                        Barcha domenlar
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    id="graph-search"
+                    placeholder="Atributni qidirish...">
+
+            </div>
+
+            <div class="col-md-3 text-end">
+
+                <span class="badge bg-success">
+
+                    Jonli grafik
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =============================================== -->
+    <!-- Graph Area -->
+    <!-- =============================================== -->
+
+    <div class="card-body p-0">
+
+        <div
+            id="knowledge-network"
+            style="height:650px;width:100%;">
+
+            <div
+                class="d-flex
+                       justify-content-center
+                       align-items-center
+                       h-100">
+
+                <div class="text-center">
+
+                    <div
+                        class="spinner-border
+                               text-primary
+                               mb-3">
+
+                    </div>
+
+                    <h5>
+
+                        Bilimlar grafigi yuklanmoqda...
+
+                    </h5>
+
+                    <small class="text-muted">
+
+                        KD-HDIE freymvorkidan semantik tugunlar olinmoqda
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =============================================== -->
+    <!-- Footer -->
+    <!-- =============================================== -->
+
+    <div class="card-footer bg-white">
+
+        <div class="row text-center">
+
+            <div class="col">
+
+                <small class="text-muted">
+
+                    Tugunlar
+
+                </small>
+
+                <h6 id="graph-node-count">
+
+                    0
+
+                </h6>
+
+            </div>
+
+            <div class="col">
+
+                <small class="text-muted">
+
+                    Qirralar
+
+                </small>
+
+                <h6 id="graph-edge-count">
+
+                    0
+
+                </h6>
+
+            </div>
+
+            <div class="col">
+
+                <small class="text-muted">
+
+                    Domenlar
+
+                </small>
+
+                <h6 id="graph-domain-count">
+
+                    {{ summary.domains }}
+
+                </h6>
+
+            </div>
+
+            <div class="col">
+
+                <small class="text-muted">
+
+                    Kanonik atributlar
+
+                </small>
+
+                <h6>
+
+                    {{ summary.canonical_attributes }}
+
+                </h6>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

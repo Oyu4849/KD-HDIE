@@ -1,0 +1,67 @@
+<div class="card shadow-sm">
+
+    <div class="card-header bg-white">
+
+        <h5 class="fw-bold mb-1">
+
+            <i class="bi bi-grid-3x3-gap-fill text-success"></i>
+
+            Domenlar statistikasi
+
+        </h5>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-hover">
+
+            <thead>
+
+            <tr>
+
+                <th>Domen</th>
+
+                <th class="text-end">
+
+                    Atributlar
+
+                </th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for domain, count in domains.items %}
+
+            <tr>
+
+                <td>
+
+                    {{ domain }}
+
+                </td>
+
+                <td class="text-end">
+
+                    <span class="badge bg-success">
+
+                        {{ count }}
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

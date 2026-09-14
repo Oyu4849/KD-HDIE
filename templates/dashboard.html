@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>KD-HDIE freymvorki</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container py-4">
+
+    <!-- ====================================== -->
+    <!-- Header -->
+    <!-- ====================================== -->
+
+    <div class="row mb-4">
+
+        <div class="col">
+
+            <h2>
+
+                KD-HDIE Framework
+
+            </h2>
+
+            <p class="text-muted">
+
+                Geterogen ma’lumotlarning o‘zaro hamkorlik platformasi
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ====================================== -->
+    <!-- Control -->
+    <!-- ====================================== -->
+
+    <div class="card mb-4">
+
+        <div class="card-header">
+
+            Freymvork
+
+        </div>
+
+        <div class="card-body">
+
+            <button
+                    class="btn btn-primary"
+                    onclick="runFramework()">
+
+                Freymvorkni ishga tushirish
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ====================================== -->
+    <!-- Statistics -->
+    <!-- ====================================== -->
+
+    <div class="card mb-4">
+
+        <div class="card-header">
+
+            Statistika
+
+        </div>
+
+        <div class="card-body">
+
+            <pre id="statistics">
+
+Ma’lumot mavjud emas
+
+            </pre>
+
+        </div>
+
+    </div>
+
+    <!-- ====================================== -->
+    <!-- Metadata -->
+    <!-- ====================================== -->
+
+    <div class="card mb-4">
+
+        <div class="card-header">
+
+            Metama’lumotlar
+
+        </div>
+
+        <div class="card-body">
+
+            <pre id="metadata">
+
+No Data
+
+            </pre>
+
+        </div>
+
+    </div>
+
+    <!-- ====================================== -->
+    <!-- Status -->
+    <!-- ====================================== -->
+
+    <div class="card">
+
+        <div class="card-header">
+
+            Holat
+
+        </div>
+
+        <div class="card-body">
+
+            <span id="status">
+
+Tayyor
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const FRAMEWORK_URL = "{% url 'systems:execute_framework' %}";
+
+async function runFramework(){
+
+    document.getElementById("status").innerHTML = "Bajarilmoqda...";
+    try{
+
+        const response = await fetch(FRAMEWORK_URL);
+
+        const result = await response.json();
+
+        document.getElementById("statistics").textContent =
+            JSON.stringify(result.statistics, null, 4);
+
+        document.getElementById("metadata").textContent =
+            JSON.stringify(result.metadata, null, 4);
+
+        document.getElementById("status").innerHTML =
+            result.message;
+
+    }catch(error){
+
+        document.getElementById("status").innerHTML =
+            "Xatolik: " + error;
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

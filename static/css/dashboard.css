@@ -1,0 +1,453 @@
+/* ==========================================================
+   KD-HDIE Framework
+   Scientific Dashboard
+   Version 1.0
+========================================================== */
+
+:root{
+
+    --primary:#1E3A8A;
+    --primary-light:#3B82F6;
+
+    --success:#16A34A;
+    --warning:#F59E0B;
+    --danger:#DC2626;
+
+    --sidebar:#0F172A;
+
+    --background:#F8FAFC;
+
+    --card:#FFFFFF;
+
+    --border:#E5E7EB;
+
+    --text:#111827;
+
+    --muted:#6B7280;
+
+    --shadow:0 8px 24px rgba(0,0,0,.05);
+
+    --radius:14px;
+
+}
+
+/* ========================================================== */
+
+html,
+body{
+
+    height:100%;
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+/* ========================================================== */
+
+.wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* ========================================================== */
+/* Sidebar */
+/* ========================================================== */
+
+.sidebar{
+
+    width:270px;
+
+    min-height:100vh;
+
+    background:var(--sidebar);
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    overflow-y:auto;
+
+    box-shadow:var(--shadow);
+
+}
+
+.sidebar hr{
+
+    border-color:rgba(255,255,255,.12);
+
+}
+
+.sidebar .logo-icon{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    background:var(--primary-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:22px;
+
+}
+
+.sidebar h5{
+
+    color:#fff;
+
+}
+
+.sidebar small{
+
+    color:#CBD5E1 !important;
+
+}
+
+.sidebar .nav-link{
+
+    color:#CBD5E1;
+
+    border-radius:10px;
+
+    margin-bottom:4px;
+
+    padding:12px 14px;
+
+    transition:.25s;
+
+}
+
+.sidebar .nav-link:hover{
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+}
+
+.sidebar .nav-link.active{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.sidebar .nav-link i{
+
+    width:24px;
+
+}
+
+/* ========================================================== */
+/* Main */
+/* ========================================================== */
+
+.main{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+/* ========================================================== */
+/* Navbar */
+/* ========================================================== */
+
+.navbar{
+
+    background:#fff;
+
+    min-height:78px;
+
+}
+
+.navbar h4{
+
+    color:var(--primary);
+
+}
+
+/* ========================================================== */
+/* Content */
+/* ========================================================== */
+
+.content{
+
+    flex:1;
+
+}
+
+/* ========================================================== */
+/* Cards */
+/* ========================================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.card-title{
+
+    color:var(--muted);
+
+    font-size:.9rem;
+
+}
+
+.card-value{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.card-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    color:#fff;
+
+}
+
+.bg-primary-soft{
+
+    background:#DBEAFE;
+
+}
+
+.bg-success-soft{
+
+    background:#DCFCE7;
+
+}
+
+.bg-warning-soft{
+
+    background:#FEF3C7;
+
+}
+
+.bg-danger-soft{
+
+    background:#FEE2E2;
+
+}
+
+/* ========================================================== */
+/* Dashboard Sections */
+/* ========================================================== */
+
+.dashboard-section{
+
+    margin-bottom:28px;
+
+}
+
+.section-title{
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+/* ========================================================== */
+/* Tables */
+/* ========================================================== */
+
+.table{
+
+    background:#fff;
+
+}
+
+.table thead{
+
+    background:#F3F4F6;
+
+}
+
+.table th{
+
+    font-weight:600;
+
+}
+
+/* ========================================================== */
+/* Charts */
+/* ========================================================== */
+
+.chart-card{
+
+    min-height:420px;
+
+}
+
+.chart-container{
+
+    width:100%;
+
+    height:360px;
+
+}
+
+/* ========================================================== */
+/* Pipeline */
+/* ========================================================== */
+
+.pipeline-step{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.pipeline-step.success{
+
+    border-left:5px solid var(--success);
+
+}
+
+.pipeline-arrow{
+
+    font-size:24px;
+
+    color:var(--muted);
+
+}
+
+/* ========================================================== */
+/* Status */
+/* ========================================================== */
+
+.status-success{
+
+    color:var(--success);
+
+}
+
+.status-warning{
+
+    color:var(--warning);
+
+}
+
+.status-danger{
+
+    color:var(--danger);
+
+}
+
+/* ========================================================== */
+/* Footer */
+/* ========================================================== */
+
+footer{
+
+    background:#fff;
+
+}
+
+/* ========================================================== */
+/* Responsive */
+/* ========================================================== */
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        width:80px;
+
+    }
+
+    .sidebar h5,
+    .sidebar small,
+    .sidebar span{
+
+        display:none;
+
+    }
+
+    .main{
+
+        margin-left:80px;
+
+        width:calc(100% - 80px);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+}

@@ -1,0 +1,67 @@
+<div class="card shadow-sm">
+
+    <div class="card-header bg-white">
+
+        <h5 class="fw-bold">
+
+            <i class="bi bi-database-fill text-primary"></i>
+
+            Manba tizimlari
+
+        </h5>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-hover">
+
+            <thead>
+
+            <tr>
+
+                <th>Manba</th>
+
+                <th class="text-end">
+
+                    Atributlar
+
+                </th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for source, count in source_statistics.items %}
+
+            <tr>
+
+                <td>
+
+                    {{ source }}
+
+                </td>
+
+                <td class="text-end">
+
+                    <span class="badge bg-primary">
+
+                        {{ count }}
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

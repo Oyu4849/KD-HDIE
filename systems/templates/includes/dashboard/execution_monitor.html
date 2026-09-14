@@ -1,0 +1,283 @@
+<div class="dashboard-section mt-5">
+
+    <div class="card">
+
+        <div class="card-header bg-white">
+
+            <h5 class="fw-bold mb-1">
+
+                <i class="bi bi-cpu-fill text-primary"></i>
+
+                Algoritmlar bajarilishini monitoring qilish
+
+            </h5>
+
+            <small class="text-muted">
+
+                KD-HDIE o‘zaro hamkorlik ish jarayonining real vaqt rejimidagi monitoringi
+
+            </small>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+
+                <thead>
+
+                <tr>
+
+                    <th>Algoritm</th>
+
+                    <th>Holat</th>
+
+                    <th>Yozuvlar</th>
+
+                    <th>Natija</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>Metama’lumotlar</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Yakunlandi
+
+                        </span>
+
+                    </td>
+
+                    <td>{{ metadata.records_processed }}</td>
+
+                    <td>
+
+                        {{ statistics.total_attributes }}
+
+                        atribut
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Hal qiluvchi modul</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.resolved_attributes }}
+
+                    </td>
+
+                    <td>
+
+                        Hal qilish darajasi
+
+                        {{ statistics.resolution_rate }}
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Semantik</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.semantic_validated }}
+
+                    </td>
+
+                    <td>
+
+                        Qamrov
+
+                        {{ statistics.semantic_coverage }}
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Moslashtirish</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.mapped_attributes }}
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.canonical_attributes }}
+
+                        kanonik
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Uyg‘unlashtirish</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.harmonized_records }}
+
+                    </td>
+
+                    <td>
+
+                        Muvaffaqiyatli
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Sifat</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.valid_attributes }}
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.quality_score }}
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Konflikt</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.conflicts }}
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.value_conflicts }}
+
+                        qiymat konfliktlari
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Birlashtirish</td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{ statistics.fused_records }}
+
+                    </td>
+
+                    <td>
+
+                        Yagona model
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

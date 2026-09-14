@@ -1,0 +1,277 @@
+<div class="card shadow-sm border-0 mt-4">
+
+    <!-- ===================================================== -->
+    <!-- Header -->
+    <!-- ===================================================== -->
+
+    <div class="card-header bg-white">
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+
+                <h5 class="fw-bold mb-1">
+
+                    <i class="bi bi-hdd-network-fill text-primary"></i>
+
+                    Tizim resurslari monitoringi
+
+                </h5>
+
+                <small class="text-muted">
+
+                    KD-HDIE algoritmlari foydalanayotgan hisoblash resurslarini real vaqt rejimida monitoring qilish
+
+                </small>
+
+            </div>
+
+            <span class="badge bg-success">
+
+                JONLI
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Body -->
+    <!-- ===================================================== -->
+
+    <div class="card-body">
+
+        <div class="row g-4">
+
+            <!-- CPU -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="border rounded p-3 text-center h-100">
+
+                    <div class="display-5 text-primary mb-2">
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                    </div>
+
+                    <h6 class="fw-bold">
+
+                        Protsessor yuklanishi
+
+                    </h6>
+
+                    <h3 class="fw-bold text-primary">
+
+                        {{ resources.cpu|default:"18%" }}
+
+                    </h3>
+
+                    <div class="progress mt-3" style="height:8px;">
+
+                        <div class="progress-bar bg-primary"
+
+                             style="width: {{ resources.cpu|default:'18' }}%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Memory -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="border rounded p-3 text-center h-100">
+
+                    <div class="display-5 text-success mb-2">
+
+                        <i class="bi bi-memory"></i>
+
+                    </div>
+
+                    <h6 class="fw-bold">
+
+                        Xotira yuklanishi
+
+                    </h6>
+
+                    <h3 class="fw-bold text-success">
+
+                        {{ resources.memory|default:"42%" }}
+
+                    </h3>
+
+                    <div class="progress mt-3" style="height:8px;">
+
+                        <div class="progress-bar bg-success"
+
+                             style="width: {{ resources.memory|default:'42' }}%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Disk -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="border rounded p-3 text-center h-100">
+
+                    <div class="display-5 text-warning mb-2">
+
+                        <i class="bi bi-device-hdd-fill"></i>
+
+                    </div>
+
+                    <h6 class="fw-bold">
+
+                        Disk yuklanishi
+
+                    </h6>
+
+                    <h3 class="fw-bold text-warning">
+
+                        {{ resources.disk|default:"31%" }}
+
+                    </h3>
+
+                    <div class="progress mt-3" style="height:8px;">
+
+                        <div class="progress-bar bg-warning"
+
+                             style="width: {{ resources.disk|default:'31' }}%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Network -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="border rounded p-3 text-center h-100">
+
+                    <div class="display-5 text-danger mb-2">
+
+                        <i class="bi bi-wifi"></i>
+
+                    </div>
+
+                    <h6 class="fw-bold">
+
+                        Tarmoq faolligi
+
+                    </h6>
+
+                    <h3 class="fw-bold text-danger">
+
+                        {{ resources.network|default:"12 MB/s" }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Joriy o‘tkazuvchanlik
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row">
+
+            <div class="col-lg-6">
+
+                <table class="table table-sm table-borderless">
+
+                    <tr>
+
+                        <th>Faol oqimlar</th>
+
+                        <td>{{ resources.threads|default:8 }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Bajarilayotgan jarayonlar</th>
+
+                        <td>{{ resources.processes|default:5 }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Freymvork holati</th>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                Ishlayapti
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <table class="table table-sm table-borderless">
+
+                    <tr>
+
+                        <th>Python versiyasi</th>
+
+                        <td>3.13</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Django versiyasi</th>
+
+                        <td>6.0</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Oxirgi yangilanish</th>
+
+                        <td>{{ resources.last_refresh|default:"Hozirgina" }}</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,113 @@
+<div class="card shadow-sm h-100">
+
+    <div class="card-header bg-white">
+
+        <h5 class="mb-1 fw-bold">
+            <i class="bi bi-diagram-3-fill text-primary"></i>
+            Kanonik atributlar
+        </h5>
+
+        <small class="text-muted">
+            KD-HDIE freymvorki tomonidan aniqlangan atributlar
+        </small>
+
+    </div>
+
+    <div class="card-body p-0">
+
+        <div class="list-group list-group-flush">
+
+            {% for attribute in attributes %}
+
+            <button
+
+	class="list-group-item attribute-item"
+
+	data-attribute="{{ attribute.key }}"
+
+	data-count="{{ attribute.count }}"
+
+	data-domain="{{ attribute.domain }}"
+
+	data-datatype="{{ attribute.datatype }}"
+
+	data-unit="{{ attribute.unit }}"
+
+	data-semantic="{{ attribute.semantic_status }}"
+
+	data-quality="{{ attribute.quality_score }}"
+
+	data-conflict="{{ attribute.conflict_status }}"
+
+	data-fusion="{{ attribute.fusion_status }}">
+
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <strong>
+
+                            {{ attribute.label }}
+
+                        </strong>
+
+                        <br>
+
+                        <small class="text-muted">
+
+                            Kanonik atribut
+
+                        </small>
+
+                    </div>
+
+                    <div class="text-end">
+
+                        <span class="badge bg-primary rounded-pill">
+
+                            {{ attribute.count }}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </button>
+
+            {% empty %}
+
+            <div class="p-4 text-center text-muted">
+
+                Atributlar mavjud emas.
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="card-footer bg-light">
+
+        <div class="d-flex justify-content-between">
+
+            <span>
+
+                Jami kanonik atributlar
+
+            </span>
+
+            <strong>
+
+                {{ summary.canonical_attributes }}
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Bilimlar grafigi | KD-HDIE freymvorki
+{% endblock %}
+
+
+{% block extra_css %}
+
+<!-- vis Network CSS -->
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/vis-network/styles/vis-network.min.css">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row mb-4">
+
+        <div class="col-md-12">
+
+            <h2 class="fw-bold">
+
+                <i class="bi bi-diagram-3-fill text-primary"></i>
+
+                Bilimlar grafigi
+
+            </h2>
+
+            <p class="text-muted">
+
+                KD-HDIE freymvorki tomonidan shakllantirilgan ilmiy semantik grafik
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    {% include "includes/knowledge/summary_cards.html" %}
+
+
+    <div class="row mt-4">
+
+        <div class="col-lg-8">
+
+            {% include "includes/knowledge/graph_canvas.html" %}
+
+        </div>
+
+        <div class="col-lg-4">
+
+            {% include "includes/knowledge/node_details.html" %}
+
+        </div>
+
+    </div>
+
+
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            {% include "includes/metadata/domain_statistics.html" %}
+
+        </div>
+
+        <div class="col-lg-6">
+
+            {% include "includes/metadata/source_statistics.html" %}
+
+        </div>
+
+    </div>
+
+
+    <div class="row mt-4">
+
+        <div class="col-lg-12">
+
+            {% include "includes/knowledge/relationships.html" %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+
+<!-- vis Network -->
+
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<!-- KD-HDIE -->
+
+<script src="{% static 'js/knowledge_graph.js' %}"></script>
+
+{% endblock %}

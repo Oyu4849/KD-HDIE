@@ -1,0 +1,20 @@
+source_system,source_attribute,canonical_attribute,domain,unit,semantic_role
+OPENMETEO,time,timestamp,Temporal,,observation key
+OPENMETEO,temperature_2m_mean,temperature,Climate,°C,meteorological observation
+OPENMETEO,precipitation_sum,precipitation,Climate,mm,meteorological observation
+OPENMETEO,wind_speed_10m_mean,wind_speed,Climate,m/s,meteorological observation
+NASA,DATE,timestamp,Temporal,,observation key
+NASA,T2M,temperature,Climate,°C,meteorological observation
+NASA,PRECTOTCORR,precipitation,Climate,mm,meteorological observation
+NASA,WS2M,wind_speed,Climate,m/s,meteorological observation
+NASA,RH2M,relative_humidity,Climate,%,meteorological observation
+GEE,NDVI,ndvi,Vegetation,ratio,remote-sensing index
+GEE,MSAVI,msavi,Vegetation,ratio,remote-sensing index
+GEE,MNDWI,mndwi,Water,ratio,remote-sensing index
+GEE,BSI,bsi,Soil,ratio,remote-sensing index
+GEE,S2_WATER_AREA_KM2,surface_water_area,Water,km²,source-specific water estimate
+GEE,JRC_WATER_AREA_KM2,surface_water_area,Water,km²,source-specific water estimate
+GEE,S2_SCENE_COUNT,scene_count,ObservationQuality,count,provenance/quality metadata
+GEE,S2_VALID_PIXEL_COUNT,valid_pixel_count,ObservationQuality,pixels,provenance/quality metadata
+GEE,ERA5_IMAGE_COUNT,era5_image_count,ObservationQuality,count,provenance/quality metadata
+GEE,JRC_IMAGE_COUNT,jrc_image_count,ObservationQuality,count,provenance/quality metadata

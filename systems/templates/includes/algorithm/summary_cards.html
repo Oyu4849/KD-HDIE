@@ -1,0 +1,195 @@
+<div class="row g-4 mb-4">
+
+    <!-- ============================================== -->
+    <!-- Running Algorithms -->
+    <!-- ============================================== -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card border-0 shadow-sm h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-uppercase text-muted">
+
+                            Bajarilayotgan algoritmlar
+
+                        </small>
+
+                        <h2 class="fw-bold mt-2 mb-1 text-primary">
+
+                            {{ statistics.running_algorithms|default:0 }}
+
+                        </h2>
+
+                        <small class="text-muted">
+
+                            Hozir bajarilmoqda
+
+                        </small>
+
+                    </div>
+
+                    <div class="display-5 text-primary">
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ============================================== -->
+    <!-- Completed Algorithms -->
+    <!-- ============================================== -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card border-0 shadow-sm h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-uppercase text-muted">
+
+                            Yakunlangan vazifalar
+
+                        </small>
+
+                        <h2 class="fw-bold mt-2 mb-1 text-success">
+
+                            {{ statistics.completed_algorithms|default:8 }}
+
+                        </h2>
+
+                        <small class="text-success">
+
+                            Muvaffaqiyatli yakunlandi
+
+                        </small>
+
+                    </div>
+
+                    <div class="display-5 text-success">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ============================================== -->
+    <!-- Average Runtime -->
+    <!-- ============================================== -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card border-0 shadow-sm h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-uppercase text-muted">
+
+                            O‘rtacha bajarilish vaqti
+
+                        </small>
+
+                        <h2 class="fw-bold mt-2 mb-1 text-warning">
+
+                            {{ statistics.average_runtime|default:"0.31 s" }}
+
+                        </h2>
+
+                        <small class="text-muted">
+
+                            Har bir algoritm uchun
+
+                        </small>
+
+                    </div>
+
+                    <div class="display-5 text-warning">
+
+                        <i class="bi bi-stopwatch-fill"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ============================================== -->
+    <!-- System Health -->
+    <!-- ============================================== -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card border-0 shadow-sm h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-uppercase text-muted">
+
+                            Tizim holati
+
+                        </small>
+
+                        <h2 class="fw-bold mt-2 mb-1 text-danger">
+
+                            {{ statistics.system_health|default:"100%" }}
+
+                        </h2>
+
+                        <small class="text-success">
+
+                            Ishlayapti
+
+                        </small>
+
+                    </div>
+
+                    <div class="display-5 text-danger">
+
+                        <i class="bi bi-heart-pulse-fill"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

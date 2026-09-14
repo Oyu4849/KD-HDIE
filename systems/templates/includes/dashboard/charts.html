@@ -1,0 +1,210 @@
+<div class="dashboard-section mt-5">
+
+    <div class="row g-4">
+
+        <!-- Attribute Distribution -->
+
+        <div class="col-xl-6">
+
+            <div class="card chart-card">
+
+                <div class="card-header bg-white">
+
+                    <h5 class="mb-0">
+                        Atributlar taqsimoti
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div id="attributeChart"
+                         class="chart-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Domain Distribution -->
+
+        <div class="col-xl-6">
+
+            <div class="card chart-card">
+
+                <div class="card-header bg-white">
+
+                    <h5 class="mb-0">
+
+                        Domenlar taqsimoti
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div id="domainChart"
+                         class="chart-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row g-4 mt-1">
+
+        <!-- Quality -->
+
+        <div class="col-xl-6">
+
+            <div class="card chart-card">
+
+                <div class="card-header bg-white">
+
+                    <h5 class="mb-0">
+
+                        Ma’lumotlar sifati ko‘rsatkichlari
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div id="qualityChart"
+                         class="chart-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Conflict -->
+
+        <div class="col-xl-6">
+
+            <div class="card chart-card">
+
+                <div class="card-header bg-white">
+
+                    <h5 class="mb-0">
+
+                        Konfliktlar tahlili
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div id="conflictChart"
+                         class="chart-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const attributeData = {{ statistics.attributes|safe }};
+
+Plotly.newPlot(
+
+    'attributeChart',
+
+    [{
+        x:Object.keys(attributeData),
+        y:Object.values(attributeData),
+        type:'bar'
+    }],
+
+    {
+        margin:{t:20},
+        height:350
+    }
+
+);
+
+const domainData = {{ statistics.domains|safe }};
+
+Plotly.newPlot(
+
+    'domainChart',
+
+    [{
+        labels:Object.keys(domainData),
+        values:Object.values(domainData),
+        type:'pie'
+    }],
+
+    {
+        height:350
+    }
+
+);
+
+Plotly.newPlot(
+
+    'qualityChart',
+
+    [{
+
+        type:'indicator',
+
+        mode:'gauge+number',
+
+        value:{{ statistics.quality_score }},
+
+        gauge:{
+            axis:{range:[0,1]}
+        }
+
+    }],
+
+    {
+        height:350
+    }
+
+);
+
+Plotly.newPlot(
+
+    'conflictChart',
+
+    [{
+
+        x:[
+            'Aniqlangan',
+            'Qiymat',
+            'Birlik'
+        ],
+
+        y:[
+            {{ statistics.conflicts }},
+            {{ statistics.value_conflicts }},
+            {{ statistics.unit_conflicts }}
+        ],
+
+        type:'bar'
+
+    }],
+
+    {
+        height:350
+    }
+
+);
+
+</script>

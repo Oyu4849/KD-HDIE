@@ -1,0 +1,81 @@
+<div class="dashboard-section mt-5">
+
+    <div class="card">
+
+        <div class="card-header bg-white">
+
+            <h5 class="mb-1 fw-bold">
+
+                <i class="bi bi-bar-chart-line-fill text-primary"></i>
+
+                Freymvork tahlili
+
+            </h5>
+
+            <small class="text-muted">
+
+                KD-HDIE freymvorkining ilmiy samaradorlik ko‘rsatkichlari
+
+            </small>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row text-center">
+
+                <div class="col-md-3">
+
+                    <h2 class="text-success">
+
+                        {{ statistics.resolution_rate|floatformat:2 }}
+
+                    </h2>
+
+                    <small>Hal qilish darajasi</small>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2 class="text-primary">
+
+                        {{ statistics.semantic_coverage|floatformat:2 }}
+
+                    </h2>
+
+                    <small>Semantik qamrov</small>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2 class="text-warning">
+
+                        {{ statistics.completeness|floatformat:2 }}
+
+                    </h2>
+
+                    <small>To‘liqlik</small>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2 class="text-danger">
+
+                        {{ statistics.validity|floatformat:2 }}
+
+                    </h2>
+
+                    <small>Yaroqlilik</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

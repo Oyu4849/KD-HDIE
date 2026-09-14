@@ -1,0 +1,149 @@
+<div class="card shadow-sm border-0">
+
+    <div class="card-header bg-white">
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+
+                <h5 class="fw-bold mb-1">
+
+                    <i class="bi bi-share-fill text-primary"></i>
+
+                    Semantik munosabatlar
+
+                </h5>
+
+                <small class="text-muted">
+
+                    KD-HDIE bilimlar grafigidagi kanonik atributlar o‘rtasidagi munosabatlar
+
+                </small>
+
+            </div>
+
+            <span class="badge bg-primary">
+
+                <span id="relationship-count">
+                    {{ relationships|length|default:"0" }}
+                </span>
+
+                Munosabatlar
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="card-body p-0">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle mb-0">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th width="30%">
+                            Manba atributi
+                        </th>
+
+                        <th width="20%">
+                            Munosabat
+                        </th>
+
+                        <th width="30%">
+                            Maqsad atributi
+                        </th>
+
+                        <th width="20%">
+                            Og‘irlik
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="relationship-table">
+
+                    {% if relationships %}
+
+                        {% for relation in relationships %}
+
+                        <tr>
+
+                            <td>
+
+                                <span class="fw-semibold">
+
+                                    {{ relation.source }}
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-info">
+
+                                    {{ relation.type }}
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                {{ relation.target }}
+
+                            </td>
+
+                            <td>
+
+                                {{ relation.weight|default:"1.0" }}
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="4" class="text-center text-muted py-5">
+
+                                <i class="bi bi-diagram-3 fs-1 d-block mb-3"></i>
+
+                                <strong>
+
+                                    Semantik munosabatlar mavjud emas
+
+                                </strong>
+
+                                <br>
+
+                                <small>
+
+                                    Tugun tanlangandan yoki grafik tahlili yakunlangandan so‘ng munosabatlar ko‘rsatiladi.
+
+                                </small>
+
+                            </td>
+
+                        </tr>
+
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

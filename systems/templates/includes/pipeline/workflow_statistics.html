@@ -1,0 +1,245 @@
+<div class="card shadow-sm border-0 mt-4">
+
+    <!-- ===================================================== -->
+    <!-- Header -->
+    <!-- ===================================================== -->
+
+    <div class="card-header bg-white">
+
+        <h5 class="fw-bold mb-1">
+
+            <i class="bi bi-bar-chart-fill text-primary"></i>
+
+            Ish jarayoni statistikasi
+
+        </h5>
+
+        <small class="text-muted">
+
+            KD-HDIE qayta ishlash ish jarayonining ilmiy samaradorlik ko‘rsatkichlari
+
+        </small>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Body -->
+    <!-- ===================================================== -->
+
+    <div class="card-body">
+
+        <div class="row g-4">
+
+            <!-- Data Sources -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="border rounded p-3 h-100 text-center">
+
+                    <div class="display-6 text-primary mb-2">
+
+                        <i class="bi bi-database-fill"></i>
+
+                    </div>
+
+                    <h3 class="fw-bold">
+
+                        {{ statistics.data_sources|default:5 }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Geterogen ma’lumotlar manbalari
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Metadata -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="border rounded p-3 h-100 text-center">
+
+                    <div class="display-6 text-success mb-2">
+
+                        <i class="bi bi-tags-fill"></i>
+
+                    </div>
+
+                    <h3 class="fw-bold">
+
+                        {{ statistics.metadata_attributes|default:13 }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Kanonik atributlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Domains -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="border rounded p-3 h-100 text-center">
+
+                    <div class="display-6 text-warning mb-2">
+
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                    </div>
+
+                    <h3 class="fw-bold">
+
+                        {{ statistics.domains|default:5 }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Semantik domenlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Semantic Relations -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="border rounded p-3 h-100 text-center">
+
+                    <div class="display-6 text-info mb-2">
+
+                        <i class="bi bi-share-fill"></i>
+
+                    </div>
+
+                    <h3 class="fw-bold">
+
+                        {{ statistics.semantic_relations|default:13 }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Semantik munosabatlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Quality -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="border rounded p-3 h-100 text-center">
+
+                    <div class="display-6 text-success mb-2">
+
+                        <i class="bi bi-patch-check-fill"></i>
+
+                    </div>
+
+                    <h3 class="fw-bold">
+
+                        {{ statistics.quality_score|default:"100%" }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Ma’lumotlar sifat ko‘rsatkichi
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Fusion -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="border rounded p-3 h-100 text-center">
+
+                    <div class="display-6 text-danger mb-2">
+
+                        <i class="bi bi-diagram-2-fill"></i>
+
+                    </div>
+
+                    <h3 class="fw-bold">
+
+                        {{ statistics.integration_rate|default:"100%" }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Integratsiya muvaffaqiyat darajasi
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Scientific Summary -->
+
+        <div class="alert alert-light border mb-0">
+
+            <div class="d-flex">
+
+                <div class="me-3">
+
+                    <i class="bi bi-info-circle-fill text-primary fs-3"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        Ilmiy talqin
+
+                    </strong>
+
+                    <p class="mb-0 mt-2 text-muted">
+
+                        KD-HDIE ish jarayoni metama’lumotlarni ajratib olish,
+	      semantik moslashtirish, konfliktlarni hal qilish, sifatni
+	      baholash, ma’lumotlarni birlashtirish va yagona axborot
+	      modelini shakllantirish orqali geterogen ekologik ma’lumotlar
+	      to‘plamlarini muvaffaqiyatli integratsiyalaydi. Joriy bajarilish
+	      yuqori sifatli integratsiyalashgan bilimlar ifodasi bilan to‘liq
+	      o‘zaro hamkorlik ta’minlanganligini ko‘rsatadi.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

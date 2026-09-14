@@ -1,0 +1,171 @@
+<div class="dashboard-section">
+
+    <div class="row g-4">
+
+        <!-- Records -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Qayta ishlangan yozuvlar</div>
+                        <div class="card-value">
+                            {{ summary.records }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-primary">
+                        <i class="bi bi-database-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Attributes -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Atributlar</div>
+                        <div class="card-value">
+                            {{ summary.attributes }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-success">
+                        <i class="bi bi-list-columns"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Canonical -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Kanonik atributlar</div>
+                        <div class="card-value">
+                            {{ summary.canonical_attributes }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-warning">
+                        <i class="bi bi-diagram-3-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Domains -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Domenlar</div>
+                        <div class="card-value">
+                            {{ summary.domains }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-info text-white">
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row g-4 mt-1">
+
+        <!-- Quality -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Sifat ko‘rsatkichi</div>
+                        <div class="card-value">
+                            {{ summary.quality_score|floatformat:2 }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-success">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Conflicts -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Konfliktlar</div>
+                        <div class="card-value">
+                            {{ summary.conflicts }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-danger">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Version -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Freymvork versiyasi</div>
+                        <div class="card-value fs-3">
+                            {{ summary.framework_version }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-dark">
+                        <i class="bi bi-cpu-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Source -->
+        <div class="col-xl-3 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <div class="card-title">Manba tizimi</div>
+                        <div class="card-value fs-4">
+                            {{ summary.source_system }}
+                        </div>
+                    </div>
+
+                    <div class="card-icon bg-secondary">
+                        <i class="bi bi-plug-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

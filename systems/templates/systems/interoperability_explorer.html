@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+O‘zaro hamkorlik tadqiqotchisi | KD-HDIE freymvorki
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ============================================= -->
+    <!-- Page Header -->
+    <!-- ============================================= -->
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="fw-bold">
+                <i class="bi bi-arrow-left-right text-primary"></i>
+                O‘zaro hamkorlik tadqiqotchisi
+            </h2>
+
+            <p class="text-muted mb-0">
+                KD-HDIE freymvorkida metama’lumotlarni uyg‘unlashtirish,
+                semantik o‘zaro hamkorlik, konfliktlarni hal qilish,
+                ma’lumotlarni birlashtirish va yagona axborot modelini
+                shakllantirish tahlili.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- ============================================= -->
+    <!-- Summary Cards -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/summary_cards.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Generic REST/JSON API -->
+    <!-- ============================================= -->
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-header bg-white">
+            <div class="d-flex align-items-center">
+
+                <i class="bi bi-cloud-arrow-down text-primary me-2"></i>
+
+                <div>
+                    <h5 class="mb-0">
+                        Yangi API manbasini ulash
+                    </h5>
+
+                    <small class="text-muted">
+                        REST/JSON API orqali real ma’lumotlarni
+                        KD-HDIE freymvorkiga ulash
+                    </small>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card-body">
+
+            <form id="genericApiForm">
+
+                <!-- API URL -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="genericApiUrl"
+                        class="form-label fw-semibold"
+                    >
+                        API URL
+                    </label>
+
+                    <input
+                        type="url"
+                        class="form-control"
+                        id="genericApiUrl"
+                        name="url"
+                        placeholder="https://example.com/api/data"
+                        autocomplete="off"
+                        required
+                    >
+
+                    <div class="form-text">
+                        REST API endpoint manzilini kiriting.
+                    </div>
+
+                </div>
+
+
+                <!-- Method -->
+
+                <div class="row">
+
+                    <div class="col-md-3 mb-3">
+
+                        <label
+                            for="genericApiMethod"
+                            class="form-label fw-semibold"
+                        >
+                            HTTP Method
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="genericApiMethod"
+                            name="method"
+                        >
+
+                            <option value="GET">
+                                GET
+                            </option>
+
+                            <option value="POST">
+                                POST
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Parameters -->
+
+                    <div class="col-md-9 mb-3">
+
+                        <label
+                            for="genericApiParams"
+                            class="form-label fw-semibold"
+                        >
+                            Query Parameters
+                        </label>
+
+                        <textarea
+                            class="form-control font-monospace"
+                            id="genericApiParams"
+                            name="params"
+                            rows="3"
+                            placeholder='{"latitude":45,"longitude":59,"start_date":"2025-01-01","end_date":"2025-01-03"}'
+                        ></textarea>
+
+                        <div class="form-text">
+                            JSON obyekt ko‘rinishida kiriting.
+                            GET so‘rovlarida URL query parametrlariga
+                            aylantiriladi.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Headers -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="genericApiHeaders"
+                        class="form-label fw-semibold"
+                    >
+                        HTTP Headers
+                    </label>
+
+                    <textarea
+                        class="form-control font-monospace"
+                        id="genericApiHeaders"
+                        name="headers"
+                        rows="3"
+                        placeholder='{"Accept":"application/json"}'
+                    ></textarea>
+
+                    <div class="form-text">
+                        Ixtiyoriy. API autentifikatsiyasi yoki boshqa
+                        HTTP headerlari uchun foydalaniladi.
+                    </div>
+
+                </div>
+
+
+                <!-- JSON Body -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="genericApiJson"
+                        class="form-label fw-semibold"
+                    >
+                        JSON Body
+                    </label>
+
+                    <textarea
+                        class="form-control font-monospace"
+                        id="genericApiJson"
+                        name="json"
+                        rows="3"
+                        placeholder='{"key":"value"}'
+                    ></textarea>
+
+                    <div class="form-text">
+                        POST so‘rovlari uchun ixtiyoriy JSON body.
+                    </div>
+
+                </div>
+
+
+                <!-- Execute -->
+
+                <div class="d-flex align-items-center gap-2">
+
+                    <button
+                        type="submit"
+                        id="genericApiExecute"
+                        class="btn btn-primary"
+                    >
+                        <i class="bi bi-play-circle me-1"></i>
+                        API ni ishga tushirish
+                    </button>
+
+                    <span
+                        id="genericApiLoading"
+                        class="text-muted d-none"
+                    >
+                        Ma’lumotlar olinmoqda...
+                    </span>
+
+                </div>
+
+            </form>
+
+
+            <!-- Execution Result -->
+
+            <div class="mt-4">
+
+                <h6 class="fw-semibold">
+                    API ijrosi natijasi
+                </h6>
+
+                <pre
+                    id="genericApiResult"
+                    class="bg-light border rounded p-3 mb-0"
+                    style="
+                        min-height:80px;
+                        white-space:pre-wrap;
+                        font-family:monospace;
+                    "
+                >API ishga tushirilmagan.</pre>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================= -->
+    <!-- Attribute Table -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/attribute_table.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Workflow -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/pipeline_view.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Semantic Mapping -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/semantic_panel.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Conflict Resolution -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/conflict_panel.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Quality Assessment -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/quality_panel.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Data Fusion -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/fusion_panel.html" %}
+
+
+    <!-- ============================================= -->
+    <!-- Unified Information Model -->
+    <!-- ============================================= -->
+
+    {% include "includes/interoperability/unified_model_panel.html" %}
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+.card {
+    border-radius: 12px;
+}
+
+.card-header {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.progress {
+    border-radius: 8px;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: .80rem;
+}
+
+.display-5 {
+    font-size: 2.4rem;
+}
+
+#genericApiResult {
+    font-size: .875rem;
+    line-height: 1.6;
+}
+
+.font-monospace {
+    font-size: .875rem;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script src="{% static 'js/interoperability.js' %}"></script>
+
+{% endblock %}

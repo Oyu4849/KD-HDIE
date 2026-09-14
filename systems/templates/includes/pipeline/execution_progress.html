@@ -1,0 +1,260 @@
+<div class="card shadow-sm border-0 mt-4">
+
+    <!-- ===================================================== -->
+    <!-- Header -->
+    <!-- ===================================================== -->
+
+    <div class="card-header bg-white">
+
+        <h5 class="fw-bold mb-1">
+
+            <i class="bi bi-speedometer2 text-success"></i>
+
+            Ish jarayonining bajarilish jarayoni
+
+        </h5>
+
+        <small class="text-muted">
+
+            KD-HDIE o‘zaro hamkorlik ish jarayonining real vaqt rejimidagi bajarilish holati
+
+        </small>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Body -->
+    <!-- ===================================================== -->
+
+    <div class="card-body">
+
+        <!-- Overall Progress -->
+
+        <div class="mb-4">
+
+            <div class="d-flex justify-content-between mb-2">
+
+                <strong>Umumiy jarayon</strong>
+
+                <strong class="text-success">
+
+                    {{ statistics.execution_progress|default:100 }}%
+
+                </strong>
+
+            </div>
+
+            <div class="progress" style="height:14px;">
+
+                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+
+                     role="progressbar"
+
+                     style="width: {{ statistics.execution_progress|default:100 }}%;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="row g-4 text-center">
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h3 class="text-primary fw-bold">
+
+                        {{ statistics.algorithms }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Algoritmlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h3 class="text-success fw-bold">
+
+                        {{ statistics.records }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Yozuvlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h3 class="text-warning fw-bold">
+
+                        {{ statistics.execution_time|default:"0.82 s" }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Bajarilish vaqti
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h3 class="text-info fw-bold">
+
+                        {{ statistics.framework_version }}
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Freymvork versiyasi
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Step Status -->
+
+        <h6 class="fw-bold mb-3">
+
+            Joriy ish jarayoni holati
+
+        </h6>
+
+        {% for step in pipeline %}
+
+        <div class="row align-items-center mb-3">
+
+            <div class="col-md-3">
+
+                <strong>
+
+                    {{ step.name }}
+
+                </strong>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="progress" style="height:10px;">
+
+                    <div class="progress-bar
+                        {% if step.status == 'completed' %}
+                            bg-success
+                        {% elif step.status == 'running' %}
+                            bg-warning
+                        {% else %}
+                            bg-secondary
+                        {% endif %}"
+
+                        style="width: {{ step.progress }}%;">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 text-end">
+
+                {% if step.status == "completed" %}
+
+                    <span class="badge bg-success">
+
+                        Yakunlandi
+
+                    </span>
+
+                {% elif step.status == "running" %}
+
+                    <span class="badge bg-warning text-dark">
+
+                        Bajarilmoqda
+
+                    </span>
+
+                {% else %}
+
+                    <span class="badge bg-secondary">
+
+                        Kutilmoqda
+
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Footer -->
+    <!-- ===================================================== -->
+
+    <div class="card-footer bg-light">
+
+        <div class="d-flex justify-content-between">
+
+            <span>
+
+                <i class="bi bi-clock-history text-primary"></i>
+
+                Oxirgi bajarilish:
+
+                {{ statistics.last_execution|default:"Hozirgina" }}
+
+            </span>
+
+            <span>
+
+                <i class="bi bi-check-circle-fill text-success"></i>
+
+                Holat:
+
+                Muvaffaqiyatli yakunlandi
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>

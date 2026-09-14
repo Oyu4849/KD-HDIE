@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Algoritmlar monitoringi | KD-HDIE freymvorki
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ============================================== -->
+    <!-- Page Header -->
+    <!-- ============================================== -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-12">
+
+            <h2 class="fw-bold">
+
+                <i class="bi bi-cpu-fill text-primary"></i>
+
+                Algoritmlar monitoringi
+
+            </h2>
+
+            <p class="text-muted mb-0">
+
+                	KD-HDIE freymvorkida algoritmlar bajarilishi, hisoblash resurslari va bajarilish samaradorligini real vaqt rejimida monitoring qilish.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- Summary Cards -->
+    <!-- ============================================== -->
+
+    {% include "includes/algorithm/summary_cards.html" %}
+
+
+    <!-- ============================================== -->
+    <!-- Resource Monitor -->
+    <!-- ============================================== -->
+
+    {% include "includes/algorithm/resource_monitor.html" %}
+
+
+    <!-- ============================================== -->
+    <!-- CPU + Memory -->
+    <!-- ============================================== -->
+
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            {% include "includes/algorithm/cpu_usage.html" %}
+
+        </div>
+
+        <div class="col-lg-6">
+
+            {% include "includes/algorithm/memory_usage.html" %}
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- Runtime Statistics -->
+    <!-- ============================================== -->
+
+    {% include "includes/algorithm/runtime_statistics.html" %}
+
+
+    <!-- ============================================== -->
+    <!-- Performance Chart -->
+    <!-- ============================================== -->
+
+    {% include "includes/algorithm/performance_chart.html" %}
+
+
+    <!-- ============================================== -->
+    <!-- Execution Logs -->
+    <!-- ============================================== -->
+
+    {% include "includes/algorithm/execution_logs.html" %}
+
+
+    <!-- ============================================== -->
+    <!-- Execution History -->
+    <!-- ============================================== -->
+
+    {% include "includes/algorithm/execution_history.html" %}
+
+</div>
+
+{% endblock %}
+
+
+
+{% block extra_css %}
+
+<style>
+
+.card{
+
+    border-radius:12px;
+
+}
+
+.card-header{
+
+    border-bottom:1px solid #e9ecef;
+
+}
+
+.progress{
+
+    border-radius:8px;
+
+}
+
+.badge{
+
+    font-size:.82rem;
+
+}
+
+canvas{
+
+    width:100% !important;
+
+}
+
+</style>
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{% static 'js/algorithm_monitor.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,278 @@
+<div class="card shadow-sm border-0 mt-4">
+
+    <!-- ============================================== -->
+    <!-- Header -->
+    <!-- ============================================== -->
+
+    <div class="card-header bg-white">
+
+        <h5 class="fw-bold mb-1">
+
+            <i class="bi bi-list-check text-primary"></i>
+
+            Ish jarayonini bajarish bosqichlari
+
+        </h5>
+
+        <small class="text-muted">
+
+            KD-HDIE o‘zaro hamkorlik ish jarayonining batafsil bajarilish holati
+
+        </small>
+
+    </div>
+
+    <!-- ============================================== -->
+    <!-- Body -->
+    <!-- ============================================== -->
+
+    <div class="card-body p-0">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle mb-0">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th style="width:70px;">Step</th>
+
+                        <th>Algoritm</th>
+
+                        <th>Tavsif</th>
+
+                        <th>Holat</th>
+
+                        <th>Yozuvlar</th>
+
+                        <th>Bajarilish vaqti</th>
+
+                        <th>Jarayon</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for step in pipeline %}
+
+                    <tr>
+
+                        <!-- Step Number -->
+
+                        <td>
+
+                            <span class="badge bg-primary">
+
+                                {{ forloop.counter }}
+
+                            </span>
+
+                        </td>
+
+                        <!-- Algorithm -->
+
+                        <td>
+
+                            <strong>
+
+                                {{ step.name }}
+
+                            </strong>
+
+                        </td>
+
+                        <!-- Description -->
+
+                        <td>
+
+                            <small class="text-muted">
+
+                                {{ step.description }}
+
+                            </small>
+
+                        </td>
+
+                        <!-- Status -->
+
+                        <td>
+
+                            {% if step.status == "completed" %}
+
+                                <span class="badge bg-success">
+
+                                    <i class="bi bi-check-circle-fill"></i>
+
+                                    Yakunlandi
+
+                                </span>
+
+                            {% elif step.status == "running" %}
+
+                                <span class="badge bg-warning text-dark">
+
+                                    <i class="bi bi-arrow-repeat"></i>
+
+                                    Bajarilmoqda
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-secondary">
+
+                                    <i class="bi bi-hourglass-split"></i>
+
+                                    Kutilmoqda
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <!-- Records -->
+
+                        <td>
+
+                            {{ step.records }}
+
+                        </td>
+
+                        <!-- Execution Time -->
+
+                        <td>
+
+                            {% if step.execution_time %}
+
+                                {{ step.execution_time }}
+
+                            {% else %}
+
+                                —
+
+                            {% endif %}
+
+                        </td>
+
+                        <!-- Progress -->
+
+                        <td style="width:180px;">
+
+                            <div class="progress" style="height:8px;">
+
+                                <div class="progress-bar
+                                    {% if step.status == 'completed' %}
+                                        bg-success
+                                    {% elif step.status == 'running' %}
+                                        bg-warning
+                                    {% else %}
+                                        bg-secondary
+                                    {% endif %}"
+
+                                    style="width: {{ step.progress }}%;">
+
+                                </div>
+
+                            </div>
+
+                            <small class="text-muted">
+
+                                {{ step.progress }}%
+
+                            </small>
+
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- ============================================== -->
+    <!-- Footer -->
+    <!-- ============================================== -->
+
+    <div class="card-footer bg-light">
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+
+                <small class="text-muted">
+
+                    Jami algoritmlar
+
+                </small>
+
+                <h5 class="fw-bold">
+
+                    {{ statistics.algorithms }}
+
+                </h5>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <small class="text-muted">
+
+                    Qayta ishlangan yozuvlar
+
+                </small>
+
+                <h5 class="fw-bold">
+
+                    {{ statistics.records }}
+
+                </h5>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <small class="text-muted">
+
+                    Muvaffaqiyat darajasi
+
+                </small>
+
+                <h5 class="fw-bold text-success">
+
+                    100%
+
+                </h5>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <small class="text-muted">
+
+                    Joriy holat
+
+                </small>
+
+                <h5 class="fw-bold text-primary">
+
+                    Yakunlandi
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

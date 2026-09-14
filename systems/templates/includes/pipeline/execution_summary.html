@@ -1,0 +1,347 @@
+<div class="card shadow-sm border-0 mt-4">
+
+    <!-- ====================================================== -->
+    <!-- Header -->
+    <!-- ====================================================== -->
+
+    <div class="card-header bg-white">
+
+        <h5 class="fw-bold mb-1">
+
+            <i class="bi bi-clipboard-data-fill text-success"></i>
+
+            Bajarilish xulosasi
+
+        </h5>
+
+        <small class="text-muted">
+
+            KD-HDIE geterogen ma’lumotlarning o‘zaro hamkorlik freymvorkining yakuniy bajarilish hisoboti
+
+        </small>
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Body -->
+    <!-- ====================================================== -->
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <!-- Left -->
+
+            <div class="col-lg-6">
+
+                <table class="table table-borderless">
+
+                    <tr>
+
+                        <th width="45%">Freymvork</th>
+
+                        <td>KD-HDIE</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Freymvork versiyasi</th>
+
+                        <td>{{ statistics.framework_version }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Bajarilish holati</th>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                Muvaffaqiyatli yakunlandi
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Bajarilgan algoritmlar</th>
+
+                        <td>
+
+                            {{ statistics.algorithms }}
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Qayta ishlangan yozuvlar</th>
+
+                        <td>
+
+                            {{ statistics.records }}
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Bajarilish vaqti</th>
+
+                        <td>
+
+                            {{ statistics.execution_time|default:"0.82 s" }}
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="col-lg-6">
+
+                <table class="table table-borderless">
+
+                    <tr>
+
+                        <th width="45%">Metama’lumot atributlari</th>
+
+                        <td>
+
+                            {{ statistics.metadata_attributes|default:"13" }}
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Semantik domenlar</th>
+
+                        <td>
+
+                            {{ statistics.domains|default:"5" }}
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Semantik munosabatlar</th>
+
+                        <td>
+
+                            {{ statistics.semantic_relations|default:"13" }}
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Sifat ko‘rsatkichi</th>
+
+                        <td>
+
+                            <span class="badge bg-primary">
+
+                                {{ statistics.quality_score|default:"100%" }}
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Integratsiya darajasi</th>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                {{ statistics.integration_rate|default:"100%" }}
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Yagona model</th>
+
+                        <td>
+
+                            Muvaffaqiyatli shakllantirildi
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Pipeline Result -->
+
+        <div class="row text-center g-3">
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <div class="display-6 text-primary">
+
+                        <i class="bi bi-database-fill"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold mt-2">
+
+                        {{ statistics.records }}
+
+                    </h4>
+
+                    <small class="text-muted">
+
+                        Integratsiyalashgan yozuvlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <div class="display-6 text-success">
+
+                        <i class="bi bi-diagram-2-fill"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold mt-2">
+
+                        {{ statistics.algorithms }}
+
+                    </h4>
+
+                    <small class="text-muted">
+
+                        Bajarilgan algoritmlar
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <div class="display-6 text-warning">
+
+                        <i class="bi bi-patch-check-fill"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold mt-2">
+
+                        100%
+
+                    </h4>
+
+                    <small class="text-muted">
+
+                        Ish jarayonining yakunlanishi
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <div class="display-6 text-danger">
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold mt-2">
+
+                        Tayyor
+
+                    </h4>
+
+                    <small class="text-muted">
+
+                        Yagona axborot modeli
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Scientific Conclusion -->
+
+        <div class="alert alert-success mb-0">
+
+            <h6 class="fw-bold">
+
+                <i class="bi bi-award-fill"></i>
+
+                Ilmiy xulosa
+
+            </h6>
+
+            <p class="mb-0 mt-2">
+
+                KD-HDIE freymvorki geterogen ma’lumotlarning o‘zaro hamkorligini
+	ta’minlash ish jarayonini muvaffaqiyatli yakunladi. Metama’lumotlarni
+	ajratib olish, semantik moslashtirish, konfliktlarni hal qilish,
+	sifatni baholash, ma’lumotlarni birlashtirish va yagona axborot
+	modelini shakllantirishni o‘z ichiga olgan barcha qayta ishlash
+	bosqichlari muvaffaqiyatli bajarildi. Natijada shakllantirilgan
+	yagona bilim modeli intellektual qarorlarni qo‘llab-quvvatlash
+	hamda geterogen ekologik axborotni integratsiyalash uchun mos
+	keluvchi izchil semantik ifodani ta’minlaydi.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

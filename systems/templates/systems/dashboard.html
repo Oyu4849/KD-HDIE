@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+KD-HDIE freymvorki boshqaruv paneli
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+
+    <!-- ========================================= -->
+    <!-- Page Header -->
+    <!-- ========================================= -->
+
+    <div class="row mb-4">
+
+        <div class="col-12">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <h2 class="fw-bold mb-1">
+                        KD-HDIE freymvorki boshqaruv paneli
+                    </h2>
+
+                    <p class="text-muted mb-0">
+                        Bilimga asoslangan geterogen ma’lumotlarning o‘zaro hamkorlik platformasi
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <span class="badge bg-success fs-6">
+                        Freymvork ishlamoqda
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- KPI Cards -->
+    <!-- ========================================= -->
+
+    {% include "includes/dashboard/kpi_cards.html" %}
+
+    <!-- ========================================= -->
+    <!-- Processing Pipeline -->
+    <!-- ========================================= -->
+
+    {% include "includes/dashboard/pipeline.html" %}
+
+    <!-- ========================================= -->
+    <!-- Framework Analytics -->
+    <!-- ========================================= -->
+
+    {% include "includes/dashboard/framework_analytics.html" %}
+
+    <!-- ========================================= -->
+    <!-- Charts -->
+    <!-- ========================================= -->
+
+    {% include "includes/dashboard/charts.html" %}
+
+    <!-- ========================================= -->
+    <!-- Execution Monitor -->
+    <!-- ========================================= -->
+
+    {% include "includes/dashboard/execution_monitor.html" %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+<div class="sidebar d-flex flex-column flex-shrink-0 p-3">
+
+    <!-- Logo -->
+    <a href="{% url 'systems:dashboard' %}"
+       class="d-flex align-items-center mb-4 text-decoration-none">
+
+        <div class="logo-icon">
+            <i class="bi bi-diagram-3-fill"></i>
+        </div>
+
+        <div class="ms-3">
+            <h5 class="mb-0 fw-bold">KD-HDIE</h5>
+            <small class="text-muted">Freymvork</small>
+        </div>
+
+    </a>
+
+    <hr>
+
+    <ul class="nav nav-pills flex-column mb-auto">
+
+        <li class="nav-item">
+            <a href="{% url 'systems:dashboard' %}" class="nav-link">
+                <i class="bi bi-speedometer2 me-2"></i>
+                Boshqaruv paneli
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'systems:metadata' %}" class="nav-link">
+                <i class="bi bi-tags me-2"></i>
+                Metama’lumotlar tadqiqotchisi
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'systems:knowledge-graph' %}" class="nav-link">
+                <i class="bi bi-share-fill me-2"></i>
+                Bilimlar grafigi
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'systems:pipeline' %}" class="nav-link">
+                <i class="bi bi-diagram-3 me-2"></i>
+                Qayta ishlash ish jarayoni
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'systems:algorithm_monitor' %}" class="nav-link">
+                <i class="bi bi-cpu me-2"></i>
+                Algoritmlar monitoringi
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'systems:interoperability' %}" class="nav-link">
+                <i class="bi bi-arrow-left-right me-2"></i>
+                O‘zaro hamkorlik
+            </a>
+        </li>
+
+    </ul>
+
+    <hr>
+
+    <div class="small text-muted">
+
+        <div class="fw-semibold mb-2">
+            KD-HDIE freymvorki
+        </div>
+
+        <div>
+            Versiya
+            <span class="float-end">3.0</span>
+        </div>
+
+        <div>
+            Ish jarayoni
+            <span class="float-end">STANDART</span>
+        </div>
+
+        <div>
+            Holat
+            <span class="float-end text-success">
+                <i class="bi bi-circle-fill"></i>
+                Tayyor
+            </span>
+        </div>
+
+    </div>
+
+</div>

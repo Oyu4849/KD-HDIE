@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Qayta ishlash ish jarayoni | KD-HDIE freymvorki
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ====================================================== -->
+    <!-- Page Header -->
+    <!-- ====================================================== -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-12">
+
+            <h2 class="fw-bold">
+
+                <i class="bi bi-diagram-3-fill text-primary"></i>
+
+                Qayta ishlash ish jarayoni
+
+            </h2>
+
+            <p class="text-muted mb-0">
+
+                Bilimga asoslangan geterogen ma’lumotlarning o‘zaro hamkorlik freymvorkining ilmiy ish jarayonini bajarish konveyeri
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Summary Cards -->
+    <!-- ====================================================== -->
+
+    {% include "includes/pipeline/summary_cards.html" %}
+
+    <!-- ====================================================== -->
+    <!-- Workflow Diagram -->
+    <!-- ====================================================== -->
+
+    <div class="mt-4">
+
+        {% include "includes/pipeline/workflow_diagram.html" %}
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Pipeline Steps -->
+    <!-- ====================================================== -->
+
+    <div class="mt-4">
+
+        {% include "includes/pipeline/pipeline_steps.html" %}
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Execution Progress -->
+    <!-- ====================================================== -->
+
+    <div class="mt-4">
+
+        {% include "includes/pipeline/execution_progress.html" %}
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Workflow Statistics -->
+    <!-- ====================================================== -->
+
+    <div class="mt-4">
+
+        {% include "includes/pipeline/workflow_statistics.html" %}
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Execution Summary -->
+    <!-- ====================================================== -->
+
+    <div class="mt-4 mb-4">
+
+        {% include "includes/pipeline/execution_summary.html" %}
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+.card{
+    border-radius:12px;
+}
+
+.card-header{
+    border-bottom:1px solid #e9ecef;
+}
+
+.progress{
+    border-radius:10px;
+}
+
+.badge{
+    font-size:.82rem;
+}
+
+.display-6{
+    opacity:.9;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    console.log("KD-HDIE Processing Pipeline Loaded");
+
+});
+
+</script>
+
+{% endblock %}

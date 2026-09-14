@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Metama’lumotlar tadqiqotchisi
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ===================================================== -->
+    <!-- Page Header -->
+    <!-- ===================================================== -->
+
+    <div class="dashboard-section mb-4">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h2 class="fw-bold mb-2">
+
+                            <i class="bi bi-tags-fill text-primary"></i>
+
+                            Metama’lumotlar tadqiqotchisi
+
+                        </h2>
+
+                        <p class="text-muted mb-0">
+
+                            KD-HDIE freymvorki tomonidan shakllantirilgan metama’lumotlarni ilmiy tadqiq qilish. 
+	            Ushbu modul geterogen ma’lumotlarni integratsiyalash uchun zarur bo‘lgan metama’lumotlar statistikasi, 
+	            kanonik atributlar, domenlar, manba tizimlari va o‘zaro hamkorlik metama’lumotlarini taqdim etadi.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span class="badge bg-success fs-6">
+
+                            {{ summary.records }}
+
+                            Yozuvlar
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Summary Cards -->
+    <!-- ===================================================== -->
+
+    {% include "includes/metadata/summary_cards.html" %}
+
+    <!-- ===================================================== -->
+    <!-- Metadata Explorer -->
+    <!-- ===================================================== -->
+
+    <div class="row g-4">
+
+        <!-- Left Panel -->
+
+        <div class="col-lg-4">
+
+            {% include "includes/metadata/attribute_master.html" %}
+
+        </div>
+
+        <!-- Right Panel -->
+
+        <div class="col-lg-8">
+
+            {% include "includes/metadata/attribute_details.html" %}
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Statistics -->
+    <!-- ===================================================== -->
+
+    <div class="row mt-4 g-4">
+
+        <div class="col-lg-6">
+
+            {% include "includes/metadata/domain_statistics.html" %}
+
+        </div>
+
+        <div class="col-lg-6">
+
+            {% include "includes/metadata/source_statistics.html" %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+{% block extra_js %}
+
+<script src="{% static 'js/metadata.js' %}"></script>
+
+{% endblock %}

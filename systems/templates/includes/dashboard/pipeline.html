@@ -1,0 +1,338 @@
+<div class="dashboard-section mt-5">
+
+    <div class="card">
+
+        <div class="card-header bg-white">
+
+            <h5 class="mb-1 fw-bold">
+                <i class="bi bi-diagram-3-fill text-primary"></i>
+                Algoritmlarni bajarish ish jarayoni
+            </h5>
+
+            <small class="text-muted">
+                Bilimga asoslangan geterogen ma’lumotlarning o‘zaro hamkorlik ish jarayoni
+            </small>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row text-center g-3">
+
+                <!-- CSV -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-file-earmark-spreadsheet fs-2 text-primary"></i>
+
+                        <h6 class="mt-3">
+
+                            CSV
+
+                        </h6>
+
+                        <span class="badge bg-success">
+
+                            Manba
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Metadata -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-tags-fill fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Metama’lumotlar
+
+                        </h6>
+
+                        <small>
+
+                            {{ metadata.records_processed }}
+
+                            yozuv
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Resolver -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-search fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Hal qiluvchi modul
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.resolved_attributes }}
+
+                            hal qilindi
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Semantic -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-share-fill fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Semantik
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.semantic_validated }}
+
+                            tekshirildi
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row text-center g-3">
+
+                <!-- Mapping -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-arrow-left-right fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Moslashtirish
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.mapped_attributes }}
+
+                            moslashtirildi
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Harmonization -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-intersect fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Uyg‘unlashtirish
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.harmonized_records }}
+
+                            yozuv
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Quality -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-shield-check fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Sifat
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.quality_score }}
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Conflict -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-exclamation-triangle fs-2 text-warning"></i>
+
+                        <h6 class="mt-3">
+
+                            Konflikt
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.conflicts }}
+
+                            konflikt
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Fusion -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-diagram-2-fill fs-2 text-primary"></i>
+
+                        <h6 class="mt-3">
+
+                            Birlashtirish
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.fused_records }}
+
+                            yozuv
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-auto d-flex align-items-center">
+
+                    <i class="bi bi-arrow-right fs-3 text-secondary"></i>
+
+                </div>
+
+                <!-- Unified -->
+
+                <div class="col">
+
+                    <div class="pipeline-step success">
+
+                        <i class="bi bi-database-check fs-2 text-success"></i>
+
+                        <h6 class="mt-3">
+
+                            Yagona model
+
+                        </h6>
+
+                        <small>
+
+                            {{ statistics.final_records }}
+
+                            yozuv
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
