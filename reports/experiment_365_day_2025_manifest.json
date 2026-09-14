@@ -1,6 +1,6 @@
 {
   "protocol": "KD-HDIE-365D-2025-v1",
-  "result_file": "C:\\Users\\MYPRO\\Documents\\hdie\\reports\\experiment_365_day_2025.json",
+  "result_file": "reports/experiment_365_day_2025.json",
   "result_sha256": "ee928fcd6dd9dcc5d9dcf65a46138c61d381f42cbe24c2ee1d0d3dae50de55f4",
   "start_date": "2025-01-01",
   "end_date": "2025-12-31",
