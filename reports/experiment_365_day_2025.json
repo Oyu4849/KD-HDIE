@@ -3,7 +3,7 @@
   "message": "Execution completed successfully.",
   "records_processed": 730,
   "algorithms_executed": 5,
-  "execution_time": 0.933022,
+  "execution_time": 0.951411,
   "warnings": [],
   "errors": [],
   "statistics": {
@@ -24160,16 +24160,16 @@
     "pre_fusion_algorithms": 10,
     "post_fusion_algorithms": 5,
     "total_algorithm_executions": 15,
-    "execution_time": 4.250861
+    "execution_time": 4.178715
   },
   "context": {
-    "execution_id": "82ffffb5-f8c8-4474-8665-d4dccdb9974b",
+    "execution_id": "5e9f2991-8ed1-4bf1-a266-5a4f303c1380",
     "source_system": "MULTI_SOURCE",
     "target_system": "KD-HDIE",
     "operation": "INTEROPERABILITY",
     "workflow": "Daily",
     "success": true,
-    "execution_time": 0.933022,
+    "execution_time": 0.951411,
     "current_step": "UnifiedModel",
     "current_algorithm": "UnifiedModel",
     "statistics": {
@@ -48326,7 +48326,7 @@
       "pre_fusion_algorithms": 10,
       "post_fusion_algorithms": 5,
       "total_algorithm_executions": 15,
-      "execution_time": 4.250861,
+      "execution_time": 4.178715,
       "final_records": 365
     },
     "warnings": [],
@@ -48343,7 +48343,7 @@
       "OPENMETEO",
       "NASA"
     ],
-    "execution_wall_time_seconds": 4.250917,
+    "execution_wall_time_seconds": 4.178775,
     "synthetic_rows_added": false
   }
 }

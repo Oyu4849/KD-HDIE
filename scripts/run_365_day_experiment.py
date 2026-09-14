@@ -138,7 +138,7 @@ def main():
         "synthetic_rows_added": False,
     })
 
-    out = Path(args.output).resolve()
+    out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2, default=str),

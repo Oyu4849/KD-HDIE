@@ -1,7 +1,7 @@
 {
   "protocol": "KD-HDIE-365D-2025-v1",
-  "result_file": "reports/experiment_365_day_2025.json",
-  "result_sha256": "ee928fcd6dd9dcc5d9dcf65a46138c61d381f42cbe24c2ee1d0d3dae50de55f4",
+  "result_file": "reports\\experiment_365_day_2025.json",
+  "result_sha256": "a863d1dd02c35abf69a9b25a5026e948ddd454a2b87f2a670b793cbfa39e09e7",
   "start_date": "2025-01-01",
   "end_date": "2025-12-31",
   "expected_calendar_days": 365,
@@ -12,5 +12,5 @@
     "NASA"
   ],
   "synthetic_rows_added": false,
-  "completed_unix": 1788333671.1816852
+  "completed_unix": 1789384028.298122
 }
